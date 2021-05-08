@@ -1,6 +1,15 @@
 const express = require("express");
 const routes = require("./routes");
 
+const { Client } = require('pg');
+
+const client = new Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false
+    }
+});
+
 const app = express();
 app.use(express.json());
 app.use(
@@ -19,4 +28,7 @@ app.listen(port, () => {
     console.log("App running on port " + port);
 });
 
-module.exports = app;
+module.exports = {
+    app,
+    client
+}
