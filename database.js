@@ -17,28 +17,24 @@ function connectToDB() {
 }
 
 function getTime() {
-    let time = null;
+    let output = null;
     client.connect();
-    client.query('SELECT NOW()', (err, res) => {
-        if (err) { console.log(err.stack) }
-        else {
-            time = res;
-            console.log(time);
-            client.end();
-        }
+    client.query('SELECT NOW();', (err, res) => {
+        if (err) throw err;
+        output = res.rows[0];
+        console.log("getTime result: "+output);
+        client.end();
     })
-    return time;
+    return output;
 }
 
 function getTestData() {
     let output = null;
-    client.query('SELECT * FROM SRD', (err, res) => {
-        if (err) { console.log(err.stack) }
-        else {
-            output = res;
-            console.log(output);
-            client.end();
-        }
+    client.query('SELECT * FROM SRD;', (err, res) => {
+        if (err) throw err;
+        output = res;
+        console.log("getTestData result: "+output);
+        client.end();
     })
     return output;
 }
