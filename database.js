@@ -16,7 +16,7 @@ function connectToDB() {
 }
 
 function getTime() {
-    client.query('SELECT NOW() as now', (err, res) => {
+    client.query('SELECT NOW()', (err, res) => {
         if (err) { console.log(err.stack) }
         else { return res.rows[0] }
     });
