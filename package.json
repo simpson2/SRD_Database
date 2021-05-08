@@ -1,0 +1,19 @@
+{
+  "name": "srd_database",
+  "version": "0.0.1",
+  "description": "Grab NATS SRD and place into database",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simpson2/SRD_Database.git"
+  },
+  "author": "Saulius Baltramonaitis",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/simpson2/SRD_Database/issues"
+  },
+  "homepage": "https://github.com/simpson2/SRD_Database#readme"
+}
