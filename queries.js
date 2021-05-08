@@ -11,13 +11,8 @@ const getTime = (req, res) => {
 
 const getTestData = (req, res) => {
     let output = DB.getTestData();
-    let out = null;
-    for(let row = 0; row <= output.length; row++) {
-        out += output.rows[row];
-        if(row < output.length - 2) out += ",";
-    }
-    console.log("getTestData JSON result: "+out);
-    return res.json(out);
+    console.log("getTestData JSON result: "+output);
+    return res.json(output);
 }
 
 module.exports = {
