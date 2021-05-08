@@ -22,7 +22,7 @@ function getTime() {
     client.query('SELECT NOW()', (err, res) => {
         if (err) { console.log(err.stack) }
         else {
-            time = res.rows[0];
+            time = res;
             console.log(time);
             client.end();
         }
@@ -35,7 +35,7 @@ function getTestData() {
     client.query('SELECT * FROM SRD', (err, res) => {
         if (err) { console.log(err.stack) }
         else {
-            output = res.rows[0];
+            output = res;
             console.log(output);
             client.end();
         }
