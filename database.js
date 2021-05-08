@@ -15,4 +15,14 @@ function connectToDB() {
     }
 }
 
-module.exports = connectToDB;
+function getTime() {
+    client.query('SELECT NOW() as now', (err, res) => {
+        if (err) { console.log(err.stack) }
+        else { return res.rows[0] }
+    });
+}
+
+module.exports = {
+    connectToDB,
+    getTime
+}
