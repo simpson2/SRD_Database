@@ -10,16 +10,23 @@ function connectToDB() {
     try {
         client.connect();
         console.log("Successfully connected to database");
+        client.end();
     } catch (e) {
         console.log("Error:" + e);
     }
 }
 
 function getTime() {
-    client.query('SELECT NOW()', (err, res) => {
-        if (err) { console.log(err.stack) }
-        else { return res.rows[0] }
-    });
+    try {
+        client.connect();
+        client.query('SELECT NOW()', (err, res) => {
+            if (err) { console.log(err.stack) }
+            else { return res.rows[0] }
+        });
+        client.end();
+    } catch (error) {
+        console.log("Error:" + e);
+    }
 }
 
 module.exports = {
