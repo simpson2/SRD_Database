@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/simpson2/SRD_Database/issues"
   },
-  "homepage": "https://github.com/simpson2/SRD_Database#readme"
+  "homepage": "https://github.com/simpson2/SRD_Database#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
