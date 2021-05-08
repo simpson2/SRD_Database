@@ -30,6 +30,7 @@ function getTime() {
 
 function getTestData() {
     let output = null;
+    client.connect();
     client.query('SELECT * FROM SRD;', (err, res) => {
         if (err) throw err;
         output = res;

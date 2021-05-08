@@ -11,7 +11,7 @@ const getTime = (req, res) => {
 
 const getTestData = (req, res) => {
     let output = DB.getTestData();
-    console.log("getTestData JSON result: "+output);
+    console.log("getTestData JSON: "+output);
     return res.json(output);
 }
 
