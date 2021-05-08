@@ -1,6 +1,5 @@
 const express = require("express");
 const routes = require("./routes");
-const DB = require("./database");
 
 const app = express();
 app.use(express.json());
@@ -19,7 +18,5 @@ if (port == null || port == "") {
 app.listen(port, () => {
     console.log("App running on port " + port);
 });
-
-DB.connectToDB();
 
 module.exports = app;

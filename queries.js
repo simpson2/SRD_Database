@@ -1,11 +1,12 @@
-const DB = require("./database")
+const DB = require("./database");
 
 const getHome = (req, res) => {
-    return res.json({ Name: 'SRD_Database', Info: 'Node.JS, Express', Server: 'Online'});
+    return res.json({ Name: 'SRD_Database', Info: 'Node.JS, Express', Server: 'Online' });
 }
 
 const getTime = (req, res) => {
-    return res.json({ Time: DB.getTime()});
+    const time = DB.getTime();
+    return res.json({ Time: time });
 }
 
 module.exports = {
