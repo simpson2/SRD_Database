@@ -9,7 +9,13 @@ const getTime = (req, res) => {
     return res.json({ Time: time });
 }
 
+const getTestData = (req, res) => {
+    const output = DB.getTestData();
+    return res.json(output);
+}
+
 module.exports = {
     getHome,
-    getTime
+    getTime,
+    getTestData
 }

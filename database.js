@@ -40,9 +40,11 @@ function getTestData() {
             client.end();
         }
     })
+    return output;
 }
 
 module.exports = {
     connectToDB,
-    getTime
+    getTime,
+    getTestData
 }
