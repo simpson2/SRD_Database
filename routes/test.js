@@ -1,9 +1,9 @@
-//TODO require DB
+const db = require('../services/db');
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
-    res.json({});
+router.get('/', async function(req, res, next) {
+    res.json(await db.query('SELECT $1 FROM SRD', ['*']));
 });
 
 module.exports = router;
