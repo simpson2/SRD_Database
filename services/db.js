@@ -29,8 +29,8 @@ const pool = new Pool({
 //     });
 // }
 
-async function query(query, params) {
-    const { rows, fields } = await pool.query(query, params);
+async function query(query) {
+    const { rows, fields } = await pool.query(query);
     console.log("Query results:" + rows);
     return rows;
 }
