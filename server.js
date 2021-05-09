@@ -1,15 +1,21 @@
 const express = require("express");
-const routes = require("./routes");
+
+const indexRouter = require('./routes/index');
+const timeRouter = require('./routes/time');
+const srdRouter = require('./routes/srd');
 
 const app = express();
+
 app.use(express.json());
 app.use(
     express.urlencoded({
-        extended: true,
+        extended: false,
     }),
 );
 
-routes(app);
+app.use('/', indexRouter);
+app.use('/time', timeRouter);
+app.use('/srd', srdRouter);
 
 let port = process.env.PORT;
 if (port == null || port == "") {
