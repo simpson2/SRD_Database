@@ -6,6 +6,8 @@ const srdRouter = require('./routes/srd');
 
 const app = express();
 
+const getSRD = require('./services/getSRD');
+
 app.use(express.json());
 app.use(
     express.urlencoded({
@@ -25,4 +27,8 @@ app.listen(port, () => {
     console.log("App running on port " + port);
 });
 
+getSRD();
+
 module.exports = app;
+
+// http://www.nats-uk.ead-it.com/aip/current/srd/SRD_Spreadsheet.xls
