@@ -2,7 +2,7 @@ const express = require("express");
 
 const indexRouter = require('./routes/index');
 const timeRouter = require('./routes/time');
-const testRouter = require('./routes/test');
+const srdRouter = require('./routes/srd');
 
 const app = express();
 
@@ -15,7 +15,7 @@ app.use(
 
 app.use('/', indexRouter);
 app.use('/time', timeRouter);
-app.use('/test', testRouter);
+app.use('/srd', srdRouter);
 
 let port = process.env.PORT;
 if (port == null || port == "") {
@@ -26,6 +26,3 @@ app.listen(port, () => {
 });
 
 module.exports = app;
-
-//FIXME can't reconnect to client
-//FIXME all queried data not returning as expected
