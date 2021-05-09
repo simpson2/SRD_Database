@@ -1,4 +1,10 @@
-const pool = require('./config');
+const { Pool } = require('pg');
+
+const connectionString = process.env.DATABASE_URL;
+
+const pool = new Pool({
+    connectionString,
+});
 
 // async function getTime() {
 //     pool.query('SELECT NOW()', (err, res) => {
