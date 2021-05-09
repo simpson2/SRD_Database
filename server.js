@@ -4,9 +4,9 @@ const indexRouter = require('./routes/index');
 const timeRouter = require('./routes/time');
 const srdRouter = require('./routes/srd');
 
-const getSRD = require('./services/getSRD');
-
 const app = express();
+
+const getSRD = require('./services/getSRD');
 
 app.use(express.json());
 app.use(
