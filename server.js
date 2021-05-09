@@ -4,6 +4,8 @@ const indexRouter = require('./routes/index');
 const timeRouter = require('./routes/time');
 const srdRouter = require('./routes/srd');
 
+const getSRD = require('./services/getSRD');
+
 const app = express();
 
 app.use(express.json());
@@ -25,4 +27,8 @@ app.listen(port, () => {
     console.log("App running on port " + port);
 });
 
+getSRD();
+
 module.exports = app;
+
+// http://www.nats-uk.ead-it.com/aip/current/srd/SRD_Spreadsheet.xls
