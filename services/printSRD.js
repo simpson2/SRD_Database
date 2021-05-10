@@ -1,5 +1,5 @@
 const xlsx = require('xlsx');
-const getSRd = require('./getSRD');
+const getSRD = require('./getSRD');
 // const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 
 // const url = 'http://www.nats-uk.ead-it.com/aip/current/srd/SRD_Spreadsheet.xls';
@@ -20,6 +20,7 @@ const getSRd = require('./getSRD');
 // }
 
 function printSRD() {
+    getSRD();
     var workbook = xlsx.readFile('SRD.xls');
     console.log(workbook.SheetNames);
 }
