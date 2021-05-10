@@ -21,7 +21,10 @@ const getSRD = require('./getSRD');
 
 async function printSRD() {
     await getSRD();
-    var workbook = xlsx.readFile('SRD.xls');
+    var workbook = xlsx.readFile('SRD.xls', {
+        sheetRows: 1,
+        sheets: 'routes'
+    });
     console.log("SRD worksheet names: " + workbook.SheetNames);
 }
 
