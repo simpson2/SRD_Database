@@ -16,4 +16,6 @@ function printSRD() {
     }
 }
 
+req.send();
+
 module.exports = printSRD;
