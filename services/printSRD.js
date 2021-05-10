@@ -1,10 +1,9 @@
 const http = require('http');
 const fs = require('fs');
 const xlsx = require('xlsx');
+const url = 'http://www.nats-uk.ead-it.com/aip/current/srd/SRD_Spreadsheet.xls';
 //const getSRD = require('./getSRD');
 // const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
-
-// const url = 'http://www.nats-uk.ead-it.com/aip/current/srd/SRD_Spreadsheet.xls';
 
 // function printSRD() {
 //     var req = new XMLHttpRequest();
@@ -21,10 +20,10 @@ const xlsx = require('xlsx');
 //     req.send();
 // }
 
-async function printSRD() {
+function printSRD() {
     
     const file = fs.createWriteStream('SRD.xls');
-    const getSRD = http.get('http://www.nats-uk.ead-it.com/aip/current/srd/SRD_Spreadsheet.xls', (res) => {
+    http.get(url, (res) => {
 
         if(res.statusCode !== 200) throw new Error("Error when attempting to download.");
 
