@@ -10,7 +10,7 @@ function getSRD() {
         console.log('SRD download and write to file successful!');
         var workbook = xlsx.read(data, {
             type: 'array',
-            sheets: 'Routes'
+            sheets: 2
         });
         console.log("SRD worksheet names: " + workbook.SheetNames);
     })
