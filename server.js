@@ -6,7 +6,8 @@ const srdRouter = require('./routes/srd');
 
 const app = express();
 
-const getSRD = require('./services/getSRD');
+//const getSRD = require('./services/getSRD');
+const printSRD = require('./services/printSRD');
 
 app.use(express.json());
 app.use(
@@ -27,7 +28,8 @@ app.listen(port, () => {
     console.log("App running on port " + port);
 });
 
-getSRD();
+//getSRD();
+printSRD();
 
 module.exports = app;
 

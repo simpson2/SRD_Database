@@ -19,6 +19,7 @@
   "homepage": "https://github.com/simpson2/SRD_Database#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "pg": "^8.6.0"
+    "pg": "^8.6.0",
+    "xlsx": "^0.16.9"
   }
 }
