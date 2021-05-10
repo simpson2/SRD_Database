@@ -1,5 +1,4 @@
-const http = require('http');
-const fs = require('fs');
+const fetch = require('node-fetch');
 const xlsx = require('xlsx');
 const URL = 'http://www.nats-uk.ead-it.com/aip/current/srd/SRD_Spreadsheet.xls';
 //const getSRD = require('./getSRD');
