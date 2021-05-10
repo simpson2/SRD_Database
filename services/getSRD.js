@@ -9,7 +9,8 @@ function getSRD() {
     .then(data => {
         console.log('SRD download and write to file successful!');
         var workbook = xlsx.read(data, { type: 'array' });
-        console.log(workbook.Sheets['Routes']['A2'].v);
+        var routes = workbook.Sheets['Routes'];
+        console.log(routes['A2'].v);
     })
     .catch(err => {
         console.log("Error when attempting to download - " + err);
