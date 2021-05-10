@@ -19,8 +19,8 @@ const getSRD = require('./getSRD');
 //     req.send();
 // }
 
-function printSRD() {
-    getSRD();
+async function printSRD() {
+    await getSRD();
     var workbook = xlsx.readFile('SRD.xls');
     console.log("SRD worksheet names: " + workbook.SheetNames);
 }
