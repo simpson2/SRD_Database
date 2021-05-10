@@ -32,10 +32,7 @@ function printSRD() {
             console.log('SRD download and write to file successful!');
             console.log("File size: " + fs.statSync('SRD.xls').size);
 
-            var workbook = xlsx.readFile('SRD.xls', {
-                sheetRows: 1,
-                sheets: 'routes'
-            });
+            var workbook = xlsx.readFile('SRD.xls', sheetRows=1, sheets='routes');
             console.log("SRD worksheet names: " + workbook.SheetNames);
         });
     });
