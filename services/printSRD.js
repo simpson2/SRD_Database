@@ -11,8 +11,9 @@ function printSRD() {
     req.onload = (e) => {
         var data = new Uint8Array(req.response);
         var workbook = xlsx.read(data, {type: 'array'});
+        var routes = workbook.Sheets['Routes'];
 
-        console.log('Sheets contained in the SRD: ' + workbook.SheetNames);
+        console.log("First ADEP in 'Routes': " + routes['A2'].v);
     }
 
     req.send();
