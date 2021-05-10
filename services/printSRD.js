@@ -1,4 +1,5 @@
 const xlsx = require('xlsx');
+const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 
 const url = 'http://www.nats-uk.ead-it.com/aip/current/srd/SRD_Spreadsheet.xls';
 

@@ -20,6 +20,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "pg": "^8.6.0",
-    "xlsx": "^0.16.9"
+    "xlsx": "^0.16.9",
+    "xmlhttprequest": "^1.8.0"
   }
 }
