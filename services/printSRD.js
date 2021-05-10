@@ -1,5 +1,7 @@
+const http = require('http');
+const fs = require('fs');
 const xlsx = require('xlsx');
-const getSRD = require('./getSRD');
+//const getSRD = require('./getSRD');
 // const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 
 // const url = 'http://www.nats-uk.ead-it.com/aip/current/srd/SRD_Spreadsheet.xls';
@@ -20,12 +22,24 @@ const getSRD = require('./getSRD');
 // }
 
 async function printSRD() {
-    await getSRD();
-    var workbook = xlsx.readFile('SRD.xls', {
-        sheetRows: 1,
-        sheets: 'routes'
+    
+    const file = fs.createWriteStream('SRD.xls');
+    const getSRD = http.get('http://www.nats-uk.ead-it.com/aip/current/srd/SRD_Spreadsheet.xls', (res) => {
+
+        if(res.statusCode !== 200) throw new Error("Error when attempting to download.");
+
+        res.pipe(file);
+        file.on('finish', () => {
+            console.log('SRD download and write to file successful!');
+            console.log("File size: " + fs.statSync('SRD.xls').size);
+
+            var workbook = xlsx.readFile('SRD.xls', {
+                sheetRows: 1,
+                sheets: 'routes'
+            });
+            console.log("SRD worksheet names: " + workbook.SheetNames);
+        });
     });
-    console.log("SRD worksheet names: " + workbook.SheetNames);
 }
 
 module.exports = printSRD;
