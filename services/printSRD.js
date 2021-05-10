@@ -10,10 +10,9 @@ function printSRD() {
 
     req.onload = (e) => {
         var data = new Uint8Array(req.response);
+        console.log("Response array length:" + data.length);
         var workbook = XLSX.read(data, {type: 'array'});
         var routes = workbook.Sheets['Routes'];
-
-        console.log("First ADEP in 'Routes': " + routes['A2'].v);
     }
 
     req.send();
