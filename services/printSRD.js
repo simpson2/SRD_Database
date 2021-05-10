@@ -22,7 +22,7 @@ const getSRD = require('./getSRD');
 function printSRD() {
     getSRD();
     var workbook = xlsx.readFile('SRD.xls');
-    console.log(workbook.SheetNames);
+    console.log("SRD worksheet names: " + workbook.SheetNames);
 }
 
 module.exports = printSRD;

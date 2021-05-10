@@ -10,6 +10,7 @@ function getSRD() {
         res.pipe(file);
         file.on('finish', () => {
             console.log('SRD download and write to file successful!');
+            console.log("File size:" + fs.statSync('SRD.xls').size);
         });
     });
 }
