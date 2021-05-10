@@ -33,10 +33,7 @@ function printSRD() {
             console.log("File size: " + fs.statSync('SRD.xls').size);
 
             var workbook = xlsx.readFile('SRD.xls', {
-                sheetRows: 1,
-                sheets: {
-                    routes
-                }
+                sheets: 'routes'
             });
             console.log("SRD worksheet names: " + workbook.SheetNames);
         });
