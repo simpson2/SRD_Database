@@ -14,8 +14,8 @@ function printSRD() {
 
         console.log('Sheets contained in the SRD: ' + workbook.SheetNames);
     }
-}
 
-req.send();
+    req.send();
+}
 
 module.exports = printSRD;
