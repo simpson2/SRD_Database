@@ -1,4 +1,4 @@
-const xlsx = require('xlsx');
+if(typeof require !== 'undefined') XLSX = require('xlsx');
 const XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
 
 const url = 'http://www.nats-uk.ead-it.com/aip/current/srd/SRD_Spreadsheet.xls';
@@ -10,7 +10,7 @@ function printSRD() {
 
     req.onload = (e) => {
         var data = new Uint8Array(req.response);
-        var workbook = xlsx.read(data, {type: 'array'});
+        var workbook = XLSX.read(data, {type: 'array'});
         var routes = workbook.Sheets['Routes'];
 
         console.log("First ADEP in 'Routes': " + routes['A2'].v);
