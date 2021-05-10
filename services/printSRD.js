@@ -26,7 +26,6 @@ function printSRD() {
     .then(res => res.arrayBuffer())
     .then(data => {
         console.log('SRD download and write to file successful!');
-        console.log("File size: " + fs.statSync('SRD.xls').size);
         var workbook = xlsx.read(data, {type: 'array'});
         console.log("SRD worksheet names: " + workbook.SheetNames);
     })
